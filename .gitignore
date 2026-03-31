@@ -1,0 +1,28 @@
+# Secrets e credenciais — NUNCA commitar
+.env
+.env.*
+!.env.example
+scripts/setup-gcp-secrets.sh
+*-key.json
+
+# Dependencias
+node_modules/
+__pycache__/
+*.pyc
+*.pyo
+
+# Build outputs
+.next/
+dist/
+build/
+
+# Artefatos runtime do sistema de agentes
+.claude/missao-atual.md
+.claude/ultima-orquestracao.md
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# Uploads temporarios
+uploads/tmp/

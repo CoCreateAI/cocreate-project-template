@@ -1,0 +1,16 @@
+# EK.OS — CI/CD Pipeline (placeholder)
+# Sera configurado quando o repositorio GitHub estiver pronto
+
+name: Deploy EK.OS
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: TODO
+        run: echo "CI/CD pipeline a configurar"

@@ -1,0 +1,17 @@
+# EK.OS Backend Dependencies
+fastapi==0.115.12
+uvicorn[standard]==0.34.3
+pydantic==2.11.7
+pydantic-settings==2.9.1
+python-jose[cryptography]==3.4.0
+passlib[bcrypt]==1.7.4
+python-multipart==0.0.20
+neo4j==5.29.0
+google-genai==1.18.0
+httpx==0.28.1
+certifi==2025.4.26
+
+# Testing
+pytest==8.4.1
+pytest-asyncio==0.26.0
+httpx==0.28.1
