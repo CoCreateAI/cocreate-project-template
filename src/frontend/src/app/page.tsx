@@ -1,9 +1,9 @@
-// EK.OS — Home Page (placeholder)
+// {{PROJECT_NAME}} — Home Page (placeholder)
 export default function Home() {
   return (
     <main>
-      <h1>EK.OS</h1>
-      <p>Enterprise Knowledge Operation System</p>
+      <h1>{{PROJECT_NAME}}</h1>
+      <p>{{DESCRIPTION}}</p>
       <p>Inteligencia Organizacional Proativa</p>
     </main>
   )

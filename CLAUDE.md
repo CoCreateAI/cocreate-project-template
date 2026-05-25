@@ -1,209 +1,332 @@
-# EK.OS — Contexto do Projeto
+# {{PROJECT_NAME}} — Contexto do Projeto
 
-> Ultima atualizacao: 2026-03-31 (estrutura inicial criada, specs 000+001 draft)
+> Template gerado pelo **cocreate-project-template** — metodologia Spec-Driven Development (SDD) da CoCreate AI.
+> Última atualização: {{DATE}}
 
-## Identificacao
+## Como Começar
+
+> **Primeiro uso?** Siga estes passos:
+>
+> 1. **Rode `/iniciar-projeto`** (GATILHO ZERO) — a skill conduz 5 fases de perguntas guiadas: perfil do usuário, tipo de projeto, escopo inicial, macro processo do negócio e análise estratégica (riscos + compliance + dependências). Gera `docs/raw/00-perfil-projeto.md`, `docs/macro-processo.md`, `docs/analise-estrategica.md`, e preenche este CLAUDE.md.
+> 2. **Revise os outputs** — perfil, tipo de projeto, briefing inicial, macro processo e análise estratégica
+> 3. **(Opcional) Adicione material extra** em `docs/raw/` — transcrições, briefings adicionais, documentos de visão
+> 4. **Rode `/processar-contexto`** — a IA consome o briefing estruturado e gera a spec-000 (constitution) + spec-001 + propõe estrutura
+> 5. **Revise as specs geradas** — ajuste o que for necessário
+> 6. **Rode `/preparar-missao`** para começar a implementar
+>
+> O fluxo completo: **Onboarding → Raw → Specs → Plan → Código → Testes → Deploy**
+>
+> **Você usa Codex (OpenAI) em vez de Claude Code?** O template é compatível com ambas as plataformas. Veja [`AGENTS.md`](AGENTS.md) na raiz para o fluxo Codex equivalente.
+
+## Perfil do Usuário
+
+> Preenchido por `/iniciar-projeto`. Herda do `~/.claude/CLAUDE.md` global como default; sobrescreve aqui quando necessário.
 
 | Campo | Valor |
 |-------|-------|
-| **Projeto** | EK.OS (Enterprise Knowledge Operation System) |
-| **Descricao** | Sistema de inteligencia organizacional proativa para o C-suite — produto enterprise da CoCreate AI |
-| **Lider** | Rodrigo Trindade Coutinho (estrategista de IA, fundador CoCreate AI) |
-| **Inicio** | Marco 2026 |
-| **Deadline MVP** | A definir |
+| **Nome** | {{USER_NAME}} |
+| **Papel** | {{USER_ROLE}} |
+| **Contexto** | {{USER_CONTEXT}} |
+| **Nível técnico** | {{USER_TECH_LEVEL}} |
+| **Como usa IA** | {{USER_IA_MODE}} |
+| **Detalhe técnico desejado** | {{USER_DETAIL_LEVEL}} |
+| **Idioma primário** | {{USER_LANG}} |
+| **Restrições (não fazer)** | {{USER_DONT}} |
+| **Preferências (sempre fazer)** | {{USER_ALWAYS}} |
 
-## Visao
+## Tipo de Projeto
 
-Ser o sistema de inteligencia organizacional proativa que elimina a cegueira gerencial nas empresas brasileiras, transformando evidencias corporativas em clareza estrategica atraves de grafos semanticos e IA.
-
-## Missao Corrente
+> Preenchido por `/iniciar-projeto`.
 
 | Campo | Valor |
 |-------|-------|
-| **Foco** | Estrutura inicial do projeto + specs fundacionais |
-| **Tarefas Prioritarias** | 1. ~~Criar estrutura de pastas~~ FEITO  2. ~~spec-000 constitution~~ FEITO  3. ~~spec-001 estrategia~~ FEITO  4. Proxima: spec-002 arquitetura plataforma |
-| **Agentes Necessarios** | `/processar-contexto`, `/executar-tarefa` |
-| **Modo** | Rapido |
-| **Restricoes** | Fase de specs — sem codigo ainda |
-| **Atualizado em** | 2026-03-31 |
+| **Orientação** | {{Interno / Externo / Híbrido}} |
+| **Categoria** | {{CATEGORIA}} |
+| **Modelo** | {{B2B / B2C / B2G / B2B2C / Open source / Educacional / Consultoria / N/A}} |
+| **Estágio** | {{Ideia / Discovery / MVP / Em evolução / Refactor / Manutenção}} |
+| **Deadline** | {{DATA ou N/A}} |
+| **Orçamento** | {{Zero / Baixo / Médio / Alto / Sem limite}} |
+| **Stack obrigatória** | {{LISTA ou Nenhuma}} |
+| **Compliance** | {{LISTA ou Nenhum}} |
+| **Integrações obrigatórias** | {{LISTA ou Nenhuma}} |
 
-> Use `/preparar-missao` para definir o foco. O comando recomenda **Modo Rapido** (execucao direta) ou **Modo Orquestrado** (subagentes em paralelo) conforme a complexidade.
+## Macro Processo do Negócio
 
-## Stack Tecnica
+> Diagrama Mermaid + descrição das etapas em [`docs/macro-processo.md`](docs/macro-processo.md). Arquivo evolutivo — atualize sempre que o entendimento do processo mudar.
 
-| Camada | Tecnologia | Status |
-|--------|-----------|--------|
-| **Frontend** | Next.js, React, Tailwind CSS, Radix UI | Nao iniciado |
-| **Backend** | Python 3.11, FastAPI, Pydantic AI | Nao iniciado |
-| **Banco de Dados** | Neo4j Aura (UNICO — grafo + vector search) | Nao iniciado |
-| **AI/LLM** | Google Gemini (Flash + Pro + Embedding) | Nao iniciado |
-| **Deploy** | Google Cloud Run + Artifact Registry + Secret Manager | Nao iniciado |
-| **Ferramentas** | Git/GitHub, Claude Code | Em uso |
+## Análise Estratégica
+
+> Riscos + compliance + dependências + top 5 mitigações em [`docs/analise-estrategica.md`](docs/analise-estrategica.md). Gerado pela Fase 5 da skill `/iniciar-projeto`. Arquivo evolutivo — atualize quando o cenário mudar (nova fase, novo mercado, mudança regulatória).
+
+## Identificação
+
+| Campo | Valor |
+|-------|-------|
+| **Projeto** | {{PROJECT_NAME}} |
+| **Descrição** | {{DESCRIPTION}} |
+| **Líder** | {{LEADER_NAME}} ({{LEADER_ROLE}}) |
+| **Início** | {{START_DATE}} |
+| **Deadline MVP** | {{DEADLINE}} |
+
+## Visão
+
+{{PROJECT_VISION — descreva em 1-2 frases a visão do projeto}}
+
+## Missão Corrente
+
+| Campo | Valor |
+|-------|-------|
+| **Foco** | Onboarding inicial: identificar perfil do usuário, classificar tipo de projeto, capturar escopo e montar macro processo |
+| **Tarefas Prioritárias** | 1. Rodar /iniciar-projeto  2. Revisar outputs (perfil, macro-processo, briefing)  3. Rodar /processar-contexto |
+| **Agentes Necessários** | `/iniciar-projeto` |
+| **Modo** | Rápido |
+| **Restrições** | Fase de descoberta — sem código ainda, sem especificação técnica ainda |
+| **Atualizado em** | {{DATE}} |
+
+> Use `/preparar-missao` para definir o foco. O comando recomenda **Modo Rápido** (execução direta) ou **Modo Orquestrado** (subagentes em paralelo) conforme a complexidade.
+
+## Stack Técnica (Sugerida)
+
+> **Nota**: Esta é a stack sugerida pelo template. Adapte conforme a necessidade do projeto. A IA usa esta tabela para saber quais tecnologias utilizar na implementação.
+
+| Camada | Tecnologia Sugerida | Alternativas | Status |
+|--------|-------------------|-------------|--------|
+| **Frontend** | Next.js, React, Tailwind CSS | Vue/Nuxt, Angular, Svelte | Não iniciado |
+| **Backend** | Python 3.11, FastAPI | Node.js/Express, Go/Gin, Django | Não iniciado |
+| **Banco de Dados** | Neo4j Aura (grafo) | PostgreSQL, MongoDB, Supabase | Não iniciado |
+| **AI/LLM** | Google Gemini (Flash + Pro + Embedding) | OpenAI GPT, Anthropic Claude, Azure OpenAI | Não iniciado |
+| **Deploy** | Google Cloud Run + Docker | Vercel, AWS, Azure, Railway | Não iniciado |
+| **Ferramentas** | Git/GitHub, Claude Code | — | Em uso |
 
 ## Estrutura de Pastas
 
 ```
-EK.OS/
-  CLAUDE.md                                  — Este arquivo
-  .env.example                               — Template de variaveis de ambiente
-  .gitignore                                 — Regras de exclusao Git
+{{PROJECT_NAME}}/
+  CLAUDE.md                                  — Contexto do projeto para Claude Code
+  AGENTS.md                                  — Contexto do projeto para Codex (OpenAI) — espelho do CLAUDE.md
+  README.md                                  — Documentação pública do projeto
+  .env.example                               — Template de variáveis de ambiente
+  .gitignore                                 — Regras de exclusão Git
   .github/
     workflows/deploy.yml                     — CI/CD pipeline (placeholder)
-  .claude/
-    commands/                                — Agent commands (10 agentes adaptados para EK.OS)
+  .claude/                                   — CASCA CLAUDE CODE
+    .mcp.json                                — MCPs configurados (Context7)
+    settings.json                            — Settings versionados (hooks da camada Harness)
     settings.local.json                      — Config local do Claude Code
+    pending-validations.md                   — Fila gerada por hook (specs editadas aguardando /analisar-coerencia)
+    hooks/                                   — CAMADA HARNESS — scripts de hooks
+      README.md                              — Contrato dos hooks
+      post-spec-edit.ps1 / .sh               — PostToolUse: registra spec editada
+      stop-session.ps1 / .sh                 — Stop: gera lembrete de fim de sessão
+    traces/                                  — CAMADA HARNESS — log diário de execução
+      README.md                              — Formato e consumidores
+      .gitignore                             — Traces não versionados
+      YYYY-MM-DD.md                          — Trace do dia (criado sob demanda)
+    skills/                                  — Skills (workflows invocáveis com /)
+      iniciar-projeto/SKILL.md               — GATILHO ZERO: perguntas guiadas → briefing + macro processo
+      processar-contexto/SKILL.md            — Gatilho 1: raw → specs (context: fork)
+      executar-tarefa/SKILL.md               — Implementação de código + loop de correção (até 3 tentativas)
+      refinar-conteudo/SKILL.md              — Copy e posicionamento
+      analisar-coerencia/SKILL.md            — Gap analysis (context: fork) + lê pending-validations.md
+      atualizar-projeto/SKILL.md             — Sync CLAUDE.md + mapa
+      licoes-aprendidas/SKILL.md             — Regra de Diamante (lê traces para identificar falhas)
+      diretor-experiencias/SKILL.md          — Visual e UX premium
+      status-agentes/SKILL.md                — Status da orquestração + histórico via traces
+      deploy/SKILL.md                        — Deploy para produção (manual only)
+      rodar-testes/SKILL.md                  — Executar testes (manual only)
+    agents/                                  — Subagents (personas especializadas)
+      preparar-missao.md                     — Planner: analisa missão, recomenda modo
+      orquestrar.md                          — Orquestrador: coordena skills em paralelo
+  .codex/                                    — CASCA CODEX (OpenAI)
+    config.toml.example                      — Template de config Codex
+    skills/                                  — Skills equivalentes (formato Codex)
+      iniciar-projeto/SKILL.md               — Espelho da skill Claude
+      processar-contexto/SKILL.md            — Espelho da skill Claude
+      preparar-missao/SKILL.md               — Espelho da skill Claude
+  harness-ui/                                — CAMADA HARNESS — Dashboard Next.js local (porta 3001)
+    package.json                             — Next 14 + React 18 + Tailwind + Mermaid
+    README.md                                — Como rodar
+    app/                                     — Páginas (home, skills, agents, runtime, specs, guia)
+    components/                              — Nav, Mermaid, Markdown, badges
+    lib/                                     — Leitores filesystem (skills, traces, specs)
   scripts/
-    deploy-backend.ps1 / .sh                 — Deploy backend para Cloud Run
-    deploy-frontend.ps1 / .sh                — Deploy frontend para Cloud Run
-  docs/
+    deploy-backend.ps1 / .sh                 — Deploy backend
+    deploy-frontend.ps1 / .sh                — Deploy frontend
+  docs/                                      — CAMADA COMPARTILHADA (Claude + Codex consomem o mesmo)
     mapa-projeto.md                          — Mapa completo do projeto
+    macro-processo.md                        — Macro processo do negócio (Mermaid + descrição) — EVOLUTIVO
+    macro-processo.template.md               — Template usado por /iniciar-projeto Fase 4
+    analise-estrategica.md                   — Riscos + compliance + dependências — EVOLUTIVO
+    analise-estrategica.template.md          — Template usado por /iniciar-projeto Fase 5
+    perguntas/                               — Bancos de perguntas reutilizáveis
+      perfil-usuario.md                      — Quem é o usuário
+      tipo-projeto.md                        — Interno/externo, categoria, modelo, estágio
+      escopo-inicial.md                      — Problema, usuário, sucesso, fora do escopo
+      macro-processo.md                      — Etapas, atores, inputs/outputs
+      analise-estrategica.md                 — Riscos + compliance + mitigações
+    exemplos/                                — Exemplos didáticos de output das skills
+      00-perfil-projeto.example.md
+      macro-processo.example.md
+      analise-estrategica.example.md
     adr/                                     — Architecture Decision Records
-      adr-001-stack-choice.md                — Stack: Next.js + FastAPI + Neo4j + Gemini
-    raw/
-      ekos.txt                               — Conceito original do EK.OS (transcricao)
-    specs/                                   — Especificacoes SDD
-      spec-000-constitution.md               — Constitution: visao, principios, glossario, entidades
-      spec-001-estrategia-produto.md         — Estrategia: horizontal-first, vertical-ready, fases
+    raw/                                     — Material bruto (briefings, transcrições, contexto)
+    specs/                                   — Especificações SDD (numeradas: spec-NNN-titulo.md)
   src/
-    backend/                                 — FastAPI + Neo4j (placeholder)
-      Dockerfile
-      main.py
-      requirements.txt
-      app/ (config, database, models, llm, routes/)
-    frontend/                                — Next.js (placeholder)
-      Dockerfile
-      package.json
-      src/app/
-    shared/                                  — Tipos/utilitarios compartilhados (futuro)
+    backend/                                 — API (placeholder)
+    frontend/                                — Interface web (placeholder)
+    shared/                                  — Tipos/utilitários compartilhados (futuro)
   tests/
-    backend/                                 — Testes backend (placeholder)
-    frontend/                                — Testes frontend (placeholder)
+    backend/                                 — Testes backend
+    frontend/                                — Testes frontend
 ```
 
-## Glossario Canonico
+## Glossário Canônico
 
-| Termo | Definicao |
+> Preencha com os termos específicos do seu domínio. A spec-000 (constitution) deverá conter o glossário completo.
+
+| Termo | Definição |
 |-------|-----------|
-| **EK.OS** | Enterprise Knowledge Operation System — sistema de inteligencia organizacional proativa |
-| **EKS** | Enterprise Knowledge System — conceito/disciplina de conhecimento empresarial |
-| **Ontologia Corporativa** | Modelagem estruturada do conhecimento organizacional |
-| **Ficha Executiva** | Entregavel principal — documento com achados, evidencias e recomendacoes |
-| **Assessment** | Processo inicial de coleta e analise das 4 evidencias corporativas |
-| **Triangulo Semantico** | Modelo central: Intencao x Movimento x Tensao |
-| **Inteligencia Proativa** | IA que gera entregas sem ser perguntada — oposto de chatbot |
-| **Industry Pack** | Camada de configuracao vertical (templates ontologia + KPIs por setor) |
-| **Bloco de Upload** | Conjunto tematico de documentos por custodiante |
+| **{{TERM_1}}** | {{DEFINITION_1}} |
+| **{{TERM_2}}** | {{DEFINITION_2}} |
 
 ## Regras do Projeto
 
-1. **EK.OS NAO e chatbot** — e inteligencia proativa, gera entregas sem ser perguntado
-2. **EK.OS NAO e BI/dashboard** — e sistema de deteccao e recomendacao com evidencia rastreavel
-3. **Neo4j e o UNICO banco** — sem bancos relacionais
-4. **Horizontal-first, vertical-ready** — produto unico, Industry Packs como configuracao
-5. **Friccao minima** — 4 evidencias, nao "acesso a empresa toda"
-6. **Assessment como porta de entrada** — vende prova de valor antes do sistema completo
-7. **PT-BR como idioma primario** — EN quando necessario
-8. **Mermaid obrigatorio** — em toda spec e artefato arquitetural
-9. **SDD (Spec-Driven Development)** — specs sao verdade, codigo e gerado a partir delas
-10. **Testes em tests/** — nunca misturar testes com codigo fonte
-11. **Porta 8004** — para nao conflitar com CoCreate.Hub (8003)
+### Metodológicas (obrigatórias)
+1. **SDD (Spec-Driven Development)** — specs são verdade, código é gerado a partir delas
+2. **Mermaid obrigatório** — em toda spec e artefato arquitetural
+3. **Regra de Ouro** — ao final de toda fase: análise crítica + lista do que falta
+4. **Regra de Diamante** — registrar lições em toda falha ou ajuste inesperado
+5. **Testes em tests/** — nunca misturar testes com código fonte
+6. **PT-BR como idioma primário** — EN quando necessário
 
-## Sistema de Agentes
+### De Negócio (preencher conforme o projeto)
+7. {{RULE_1 — ex: "Neo4j é o ÚNICO banco — sem bancos relacionais"}}
+8. {{RULE_2 — ex: "Multi-tenant desde o início"}}
+9. {{RULE_3 — ex: "API-first — frontend consume API, nunca acessa banco direto"}}
 
-O projeto usa um sistema multi-agent com dois modos de execucao, identico ao CoCreate.Hub.
+## Sistema de Skills e Agents
 
-### Comandos de Controle
+O projeto usa a arquitetura moderna do Claude Code com **skills** (workflows) e **subagents** (personas especializadas).
 
-| Comando | Papel |
-|---------|-------|
-| `/preparar-missao` | **Cerebro da sessao** — entende a mensagem, atualiza Missao Corrente, recomenda modo |
-| `/orquestrar` | **Executor** — executa a missao no modo recomendado |
-| `/status-agentes` | Consulta resultados da ultima orquestracao |
+### Skill vs Subagent — você sempre roda a skill
 
-### Agentes Especializados
+Confusão comum: os nomes coincidem. Funciona assim:
 
-| Agente | Quando usar | Especialidade |
-|--------|-------------|--------------|
-| `/processar-contexto` | Material novo em `docs/raw/` | Transcricoes, reunioes → specs + ADRs |
-| `/analisar-coerencia` | Mudanca grande que pode conflitar | Gap analysis: specs vs codigo vs arquitetura |
-| `/executar-tarefa` | Implementacao de codigo | Backend + frontend + testes |
-| `/refinar-conteudo` | Textos precisam de trabalho | Copy executivo, posicionamento, narrativa |
-| `/diretor-experiencias-web-generativas` | Componentes visuais | UX premium, experiencias generativas |
-| `/atualizar-projeto` | Mudancas significativas | Sincroniza CLAUDE.md + mapa-projeto.md |
-| `/licoes-aprendidas` | Erros ou decisoes nao-obvias | Regra de Diamante |
+| Elemento | O que é | Como invocar |
+|----------|---------|--------------|
+| **Skill** (`.claude/skills/X/SKILL.md`) | Workflow visível, "porta de entrada" do fluxo de trabalho | `/X` no chat (slash command) |
+| **Subagent** (`.claude/agents/X.md`) | Persona especializada (modelo, tools, comportamento focado) chamada por uma skill | **Você NÃO invoca diretamente** — a skill chama via `agent: X` no frontmatter |
 
-### Modos de Execucao
+**Regra prática**: você sempre roda a **skill** com `/`. Se a skill tem `agent: X` no frontmatter, ela delega a execução ao subagent automaticamente — é transparente para você.
 
-**Modo Rapido** (padrao):
+Exemplo: `/preparar-missao` é a skill. O frontmatter dela diz `agent: preparar-missao`. Quando você roda `/preparar-missao`, a skill chama o subagent `preparar-missao` (`.claude/agents/preparar-missao.md`) que executa o trabalho pesado com modelo Opus, tools restritas e comportamento focado em "cérebro da sessão".
+
+No Codex (CLI da OpenAI), o equivalente é ativação por matching natural — ver [`AGENTS.md`](AGENTS.md) na raiz.
+
+### Skills (`.claude/skills/` — invocáveis com /)
+
+| Skill | Quando usar | Nota |
+|-------|-------------|------|
+| `/iniciar-projeto` | Primeira vez no projeto (GATILHO ZERO) | Perguntas guiadas → briefing + macro processo |
+| `/preparar-missao` | Início de sessão | Delega para subagent |
+| `/orquestrar` | Missões complexas multi-área | Delega para subagent |
+| `/processar-contexto` | Material em `docs/raw/` → specs (após /iniciar-projeto) | context: fork |
+| `/analisar-coerencia` | Mudança grande que pode conflitar | context: fork |
+| `/executar-tarefa` | Implementação de código | inline |
+| `/refinar-conteudo` | Copy, textos, posicionamento | inline |
+| `/diretor-experiencias` | Componentes visuais, UX premium | inline |
+| `/atualizar-projeto` | Mudanças significativas | inline |
+| `/licoes-aprendidas` | Regra de Diamante | inline |
+| `/status-agentes` | Status da orquestração | inline |
+| `/deploy` | Publicar em produção | MANUAL ONLY |
+| `/rodar-testes` | Executar testes | MANUAL ONLY |
+
+### Subagent Types (`.claude/agents/` — usados internamente pelas skills)
+
+| Agent | Usado por |
+|-------|-----------|
+| `preparar-missao` | skill `/preparar-missao` (via `agent: preparar-missao`) |
+| `orquestrar` | skill `/orquestrar` (via `agent: orquestrar`) |
+
+### MCPs Configurados
+
+| MCP | Função |
+|-----|--------|
+| **Context7** | Busca documentação atualizada de qualquer tecnologia/biblioteca |
+
+### Camada Harness (complemento ao SDD)
+
+Adotada em 2026-05-21 (ver [`docs/adr/adr-002-harness-engineering-complemento-sdd.md`](docs/adr/adr-002-harness-engineering-complemento-sdd.md)). 3 componentes aditivos:
+
+| Componente | O que faz |
+|------------|-----------|
+| **Hooks de sinal** ([`.claude/hooks/`](.claude/hooks/)) | PostToolUse registra specs/ADRs editados em `.claude/pending-validations.md`; Stop gera `.claude/session-end-hint.md`. Hooks **não disparam skills automaticamente** — apenas registram sinais |
+| **Traces** ([`.claude/traces/`](.claude/traces/)) | Toda skill não-readonly registra início e fim em `.claude/traces/YYYY-MM-DD.md`. `/status-agentes` lê esse histórico |
+| **Loop de correção** ([`.claude/skills/executar-tarefa/`](.claude/skills/executar-tarefa/)) | `/executar-tarefa` tenta corrigir testes falhados até 3 vezes antes de pedir ajuda, registrando cada tentativa no trace |
+| **CoCreate Studio** ([`harness-ui/`](harness-ui/)) | Dashboard local Next.js que lê tudo do filesystem em runtime: skills, agents, traces, pendências, specs, Mermaid da arquitetura regenerado. Roda em `cd harness-ui && npm install && npm run dev` na porta 3001 |
+
+**Observabilidade**: opções complementares
+- No terminal: rode `/status-agentes` para resumo curto das últimas execuções
+- No navegador: abra o CoCreate Studio ([http://localhost:3001](http://localhost:3001)) para visão completa com timeline, diagramas e estado vivo
+
+### Modos de Execução
+
+**Modo Rápido** (padrão):
 ```
-/preparar-missao → aprova → execucao direta → /atualizar-projeto (se necessario)
+/preparar-missao → aprova → execução direta → /atualizar-projeto (se necessário)
 ```
 
-**Modo Orquestrado** (missoes complexas):
+**Modo Orquestrado** (missões complexas):
 ```
-/preparar-missao → /orquestrar → subagentes em paralelo → consolidacao
+/preparar-missao → /orquestrar → subagentes em paralelo → consolidação
 ```
 
 ## Estado Atual
 
-### Documentacao (~5% — specs iniciais)
-- [x] spec-000-constitution.md — visao, principios, glossario, entidades, personas, Triangulo Semantico
-- [x] spec-001-estrategia-produto.md — decisao horizontal-first, 5 features, fases, posicionamento
-- [ ] spec-002 — Arquitetura da Plataforma
-- [ ] spec-003 — Assessment Flow
-- [ ] spec-004 — Modelo de Dados Neo4j
-- [ ] spec-005 — Ontologia do Triangulo Semantico
-- [ ] spec-006 — Pipeline de Ingestao de Documentos
-- [ ] spec-007 — Ficha de Desalinhamento Estrategico
-- [ ] specs 008-013 — Features Fase 2 + Auth + Deploy
+### Primeiros Passos
+- [ ] `/iniciar-projeto` executado — perfil, tipo de projeto, escopo, macro processo e análise estratégica capturados
+- [ ] `docs/macro-processo.md` revisado
+- [ ] `docs/analise-estrategica.md` revisado (top 3 riscos + compliance confirmados)
+- [ ] `docs/raw/00-perfil-projeto.md` revisado
+- [ ] (Opcional) Briefings adicionais colocados em `docs/raw/`
+- [ ] `/processar-contexto` executado — spec-000 gerada
+- [ ] spec-000 (constitution) revisada e aprovada
+- [ ] Stack definida na tabela acima
+- [ ] `.env` configurado a partir do `.env.example`
+- [ ] Primeiro endpoint funcional (health check)
+- [ ] Primeiro teste passando
 
-### Frontend (0% — nao iniciado)
-- [ ] Projeto Next.js inicializado
+### Documentação
+- [ ] spec-000-constitution.md — visão, princípios, glossário, entidades
+- [ ] spec-001-*.md — primeira spec de feature/arquitetura
 
-### Backend (0% — nao iniciado)
-- [ ] FastAPI configurado
+### Backend
+- [ ] API configurada e rodando
 
-### Testes (0% — nao iniciado)
-- [ ] Suite de testes configurada
+### Frontend
+- [ ] Projeto inicializado
 
-### Deploy (0% — nao iniciado)
-- [ ] Dockerfiles
-- [ ] Cloud Run
+### Testes
+- [ ] Suite configurada
 
-## Relacao com CoCreate.Hub
+### Deploy
+- [ ] Container funcional
 
-| Aspecto | CoCreate.Hub | EK.OS |
-|---------|-------------|-------|
-| **Natureza** | Hub de comunidade + educacao | Produto enterprise |
-| **Persona** | Profissionais tecnicos e de negocios | C-suite, board, diretoria |
-| **Modelo** | Freemium (Free/Premium/Business) | B2B enterprise (Assessment → Contrato) |
-| **Conexao** | Hub fala sobre EK.OS, gera awareness e leads | EK.OS valida a tese e gera receita |
+## Próximos Passos
 
-## Proximos Passos (por prioridade)
+> Preencha conforme o projeto evolui. Use prioridades P0 (crítico), P1 (importante), P2 (futuro).
 
-### P0 — Fundacao
-1. ~~Criar estrutura do projeto~~ **FEITO**
-2. ~~spec-000 constitution~~ **FEITO**
-3. ~~spec-001 estrategia de produto~~ **FEITO**
-4. spec-002 — Arquitetura da Plataforma (multi-tenant, API design, componentes)
-5. spec-003 — Assessment Flow (fluxo completo de assessment)
-6. spec-005 — Ontologia do Triangulo Semantico (modelagem Neo4j)
-7. spec-007 — Ficha de Desalinhamento Estrategico (output principal)
+### P0 — Fundação
+1. Onboarding inicial (`/iniciar-projeto`) — perfil, tipo, escopo, macro processo
+2. Processar contexto (`/processar-contexto`) — spec-000 + spec-001 a partir do raw
+3. Definir constitution (spec-000) — revisão e refinamento
+4. Definir arquitetura (spec-001 ou spec-002)
 
 ### P1 — MVP
-8. spec-004 — Modelo de Dados Neo4j
-9. spec-006 — Pipeline de Ingestao de Documentos
-10. spec-012 — Autenticacao e Multi-tenancy
-11. spec-013 — Deploy e Infraestrutura
-12. Backend: FastAPI + Neo4j + Auth + Pipeline
-13. Frontend: Upload + Dashboard + Ficha
-
-### P2 — Expansao
-14. specs 008-011 — Features Fase 2 (Radar, Navegador, Cockpit, Mapa)
-15. Industry Packs (templates por setor)
+4. (a definir após specs iniciais)
 
 ## Stakeholders
 
 | Pessoa | Papel | Foco |
 |--------|-------|------|
-| **Rodrigo Trindade Coutinho** | Fundador, estrategista de IA | Visao, arquitetura EKS, produto, execucao |
+| **{{LEADER_NAME}}** | {{LEADER_ROLE}} | {{LEADER_FOCUS}} |

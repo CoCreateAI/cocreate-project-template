@@ -1,0 +1,81 @@
+# Codex CLI — Configuração de exemplo
+# Copie este arquivo para `~/.codex/config.toml` (global) ou `.codex/config.toml` (local).
+# Documentação: https://developers.openai.com/codex
+
+# ---------------------------------------------------------------------
+# Skills locais do projeto
+# ---------------------------------------------------------------------
+
+# Codex carrega skills automaticamente quando a tarefa "bate" com o contexto.
+# Aponte para a pasta de skills deste projeto.
+
+[skills]
+paths = [
+  ".codex/skills",      # skills locais ao projeto (este template)
+  "~/.agents/skills",   # skills globais do usuário (Codex padrão)
+]
+
+# ---------------------------------------------------------------------
+# Modelo padrão
+# ---------------------------------------------------------------------
+
+[model]
+default = "gpt-5"           # ou outro modelo Codex disponível
+fallback = "gpt-5-mini"     # fallback se o principal estiver indisponível
+
+# ---------------------------------------------------------------------
+# Contexto (AGENTS.md)
+# ---------------------------------------------------------------------
+
+[context]
+# Codex lê AGENTS.md na raiz do projeto automaticamente.
+# Caso queira fallbacks customizados:
+fallback_filenames = [
+  "AGENTS.override.md",
+  "AGENTS.md",
+  "CLAUDE.md",           # permite ler CLAUDE.md como fallback (camada compartilhada)
+]
+max_bytes = 65536
+
+# ---------------------------------------------------------------------
+# MCP servers
+# ---------------------------------------------------------------------
+
+# Adicione MCPs aqui. Exemplo do Context7 (mesmo que está em .claude/.mcp.json):
+
+[mcp_servers.context7]
+command = "npx"
+args = ["-y", "@upstash/context7-mcp@latest"]
+transport = "stdio"
+
+# Outros exemplos comentados:
+# [mcp_servers.filesystem]
+# command = "npx"
+# args = ["-y", "@modelcontextprotocol/server-filesystem", "."]
+# transport = "stdio"
+
+# [mcp_servers.github]
+# command = "npx"
+# args = ["-y", "@modelcontextprotocol/server-github"]
+# transport = "stdio"
+# env = { GITHUB_PERSONAL_ACCESS_TOKEN = "ghp_..." }
+
+# ---------------------------------------------------------------------
+# Subagentes (opcional)
+# ---------------------------------------------------------------------
+
+# Codex permite subagentes com config independente.
+# Os subagentes do Claude Code (.claude/agents/) NÃO são automaticamente
+# portados aqui — se quiser equivalentes, defina-os abaixo.
+
+# [subagents.planner]
+# model = "gpt-5"
+# system = "Você é um planner que organiza tarefas complexas em passos."
+
+# ---------------------------------------------------------------------
+# Logs e telemetria (opcional)
+# ---------------------------------------------------------------------
+
+[logging]
+level = "info"      # debug | info | warn | error
+file = "~/.codex/codex.log"

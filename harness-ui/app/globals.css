@@ -1,0 +1,134 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    color-scheme: dark;
+  }
+  body {
+    background:
+      radial-gradient(circle at 18% 0%, rgba(226, 106, 94, 0.10), transparent 42%),
+      radial-gradient(circle at 82% 100%, rgba(31, 59, 87, 0.30), transparent 45%),
+      radial-gradient(circle at 50% 50%, rgba(160, 231, 178, 0.04), transparent 60%),
+      #0A1422;
+    color: #F0F4F8;
+    min-height: 100vh;
+    font-feature-settings: "ss01", "cv11";
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display), ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    letter-spacing: -0.01em;
+  }
+}
+
+@layer components {
+  .surface {
+    @apply rounded-xl border border-border-subtle bg-bg-surface/70 backdrop-blur-sm;
+  }
+  .surface-elevated {
+    @apply rounded-xl border border-border-strong bg-bg-elevated shadow-lg shadow-black/30;
+  }
+  .surface-hover {
+    @apply transition-colors hover:border-border-strong hover:bg-bg-elevated/80;
+  }
+  .chip {
+    @apply inline-flex items-center rounded-full border border-border-subtle bg-bg-surface px-2.5 py-0.5 text-[10px] font-mono uppercase tracking-wide text-text-secondary;
+  }
+  .chip-accent {
+    @apply inline-flex items-center rounded-full border border-brand-accent/40 bg-brand-accent/10 px-2.5 py-0.5 text-[10px] font-mono uppercase tracking-wide text-brand-accent-soft;
+  }
+  .chip-mint {
+    @apply inline-flex items-center rounded-full border border-brand-mint/40 bg-brand-mint/10 px-2.5 py-0.5 text-[10px] font-mono uppercase tracking-wide text-brand-mint;
+  }
+  .btn-primary {
+    @apply inline-flex items-center gap-2 rounded-lg bg-brand-accent px-4 py-2 text-sm font-semibold text-white shadow-md shadow-brand-accent/30 hover:bg-brand-accent-deep transition-colors;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 rounded-lg border border-border-strong bg-bg-surface px-4 py-2 text-sm font-medium text-text-primary hover:border-brand-accent hover:text-brand-accent-soft transition-colors;
+  }
+}
+
+.mermaid-container svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.mermaid-fullscreen {
+  display: inline-block;
+}
+
+.mermaid-fullscreen svg {
+  display: block;
+  max-width: none !important;
+  width: auto !important;
+  height: auto !important;
+}
+
+/* Tailwind preflight reseta cor/fonte em SVG. Forçar visibilidade do texto do Mermaid. */
+.mermaid-container svg text,
+.mermaid-container svg .nodeLabel,
+.mermaid-container svg .edgeLabel,
+.mermaid-container svg .cluster-label,
+.mermaid-container svg foreignObject div,
+.mermaid-container svg foreignObject span,
+.mermaid-container svg foreignObject p,
+.mermaid-fullscreen svg text,
+.mermaid-fullscreen svg .nodeLabel,
+.mermaid-fullscreen svg .edgeLabel,
+.mermaid-fullscreen svg .cluster-label,
+.mermaid-fullscreen svg foreignObject div,
+.mermaid-fullscreen svg foreignObject span,
+.mermaid-fullscreen svg foreignObject p {
+  fill: #F0F4F8 !important;
+  color: #F0F4F8 !important;
+  font-family: var(--font-display), ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif !important;
+  font-size: 13px !important;
+  line-height: 1.4 !important;
+}
+
+.mermaid-container svg .edgeLabel,
+.mermaid-fullscreen svg .edgeLabel {
+  background-color: #142435 !important;
+  padding: 2px 6px !important;
+  border-radius: 3px !important;
+}
+
+.mermaid-container svg .cluster rect,
+.mermaid-fullscreen svg .cluster rect {
+  stroke-width: 1.5 !important;
+}
+
+.markdown-body code:not(pre code) {
+  @apply rounded bg-bg-elevated px-1.5 py-0.5 text-xs font-mono;
+}
+
+.markdown-body pre {
+  @apply rounded-lg border border-border-subtle bg-bg-base p-4 text-xs;
+  overflow-x: auto;
+}
+
+.markdown-body pre code {
+  @apply font-mono text-text-primary;
+}
+
+.markdown-body table {
+  @apply border-collapse text-left;
+}
+
+.markdown-body th,
+.markdown-body td {
+  @apply border border-border-subtle px-3 py-2;
+}
+
+.markdown-body th {
+  @apply bg-bg-elevated/60 font-medium;
+}
+
+.markdown-body blockquote {
+  @apply border-l-2 border-brand-accent/60 bg-bg-surface/40 pl-4 italic text-text-secondary;
+}

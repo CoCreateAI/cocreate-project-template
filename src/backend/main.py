@@ -1,17 +1,16 @@
-# EK.OS — Enterprise Knowledge Operation System
-# FastAPI entrypoint (placeholder)
+# {{PROJECT_NAME}} — FastAPI entrypoint (placeholder)
 #
-# Para rodar: uvicorn main:app --reload --port 8004
+# Para rodar: uvicorn main:app --reload --port 8000
 
 from fastapi import FastAPI
 
 app = FastAPI(
-    title="EK.OS API",
-    description="Enterprise Knowledge Operation System — Inteligencia Organizacional Proativa",
+    title="{{PROJECT_NAME}} API",
+    description="{{DESCRIPTION}}",
     version="0.1.0",
 )
 
 
 @app.get("/api/health")
 async def health():
-    return {"status": "ok", "service": "ekos"}
+    return {"status": "ok", "service": "{{project_name}}"}

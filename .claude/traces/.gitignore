@@ -1,0 +1,3 @@
+# Traces são locais por sessão, não versionados
+*.md
+!README.md

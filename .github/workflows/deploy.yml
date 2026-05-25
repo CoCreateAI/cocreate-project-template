@@ -1,7 +1,7 @@
-# EK.OS — CI/CD Pipeline (placeholder)
+# {{PROJECT_NAME}} — CI/CD Pipeline (placeholder)
 # Sera configurado quando o repositorio GitHub estiver pronto
 
-name: Deploy EK.OS
+name: Deploy {{PROJECT_NAME}}
 
 on:
   push:

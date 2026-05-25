@@ -19,6 +19,10 @@ build/
 # Artefatos runtime do sistema de agentes
 .claude/missao-atual.md
 .claude/ultima-orquestracao.md
+.claude/session-end-hint.md
+.claude/setup-checks.json
+.claude/traces/*.md
+!.claude/traces/README.md
 
 # Sistema
 .DS_Store
